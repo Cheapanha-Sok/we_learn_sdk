@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="125dp"
+            android:src="@drawable/welcome_image"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/create_account_form"
+        android:layout_below="@id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <RelativeLayout
+            android:id="@+id/email_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
+            <TextView
+                android:id="@+id/email_fill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textColor="@color/primary"
+                android:textSize="20dp" />
+            <EditText
+                android:id="@+id/email_box"
+                android:layout_below="@id/email_fill"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint=""
+                android:textColor="#FF4D8AF0"
+                android:textColorHint="#D9D9D9"
+                android:textSize="20dp"
+                android:padding="10dp"
+                android:layout_marginTop="5dp"
+                android:width="352dp"
+                android:height="73dp"
+                android:background="@drawable/input_box" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/phone_form"
+            android:layout_below="@id/email_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
+            <TextView
+                android:id="@+id/phone_fill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textColor="@color/primary"
+                android:textSize="20dp" />
+            <EditText
+                android:id="@+id/phone_box"
+                android:layout_below="@id/phone_fill"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint=""
+                android:textColor="#FF4D8AF0"
+                android:textColorHint="#D9D9D9"
+                android:textSize="20dp"
+                android:padding="10dp"
+                android:layout_marginTop="5dp"
+                android:width="352dp"
+                android:height="73dp"
+                android:background="@drawable/input_box" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/sex_birth_form"
+            android:layout_below="@id/phone_form"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp">
+                <TextView
+                    android:id="@+id/sex_fill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sex"
+                    android:textColor="@color/primary"
+                    android:textSize="20dp" />
+                <EditText
+                    android:id="@+id/sex_box"
+                    android:layout_below="@id/sex_fill"
+                    android:layout_width="160dp"
+                    android:layout_height="46dp"
+                    android:hint=""
+                    android:textColor="#FF4D8AF0"
+                    android:textColorHint="#D9D9D9"
+                    android:textSize="15dp"
+                    android:padding="10dp"
+                    android:layout_marginTop="5dp"
+                    android:width="352dp"
+                    android:height="73dp"
+                    android:background="@drawable/input_box" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="match_parent" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp">
+                <TextView
+                    android:id="@+id/birth_fill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Birth"
+                    android:textColor="@color/primary"
+                    android:textSize="20dp" />
+                <EditText
+                    android:id="@+id/birth_box"
+                    android:layout_below="@id/birth_fill"
+                    android:layout_width="160dp"
+                    android:layout_height="46dp"
+                    android:hint=""
+                    android:textColor="#FF4D8AF0"
+                    android:textColorHint="#D9D9D9"
+                    android:textSize="15dp"
+                    android:padding="10dp"
+                    android:layout_marginTop="5dp"
+                    android:width="352dp"
+                    android:height="73dp"
+                    android:background="@drawable/input_box" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/password_form"
+            android:layout_below="@id/sex_birth_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
+            <TextView
+                android:id="@+id/password_fill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Password"
+                android:textColor="@color/primary"
+                android:textSize="20dp" />
+            <EditText
+                android:id="@+id/password_box"
+                android:layout_below="@id/password_fill"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint=""
+                android:textColor="#FF4D8AF0"
+                android:textColorHint="#D9D9D9"
+                android:textSize="20dp"
+                android:padding="10dp"
+                android:layout_marginTop="5dp"
+                android:width="352dp"
+                android:height="73dp"
+                android:background="@drawable/input_box" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/confirm_password_form"
+            android:layout_below="@id/password_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
+            <TextView
+                android:id="@+id/confirm_password_fill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Confirm Password"
+                android:textColor="@color/primary"
+                android:textSize="20dp" />
+            <EditText
+                android:id="@+id/confirm_password_box"
+                android:layout_below="@id/confirm_password_fill"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint=""
+                android:textColor="#FF4D8AF0"
+                android:textColorHint="#D9D9D9"
+                android:textSize="20dp"
+                android:padding="10dp"
+                android:layout_marginTop="5dp"
+                android:width="352dp"
+                android:height="73dp"
+                android:background="@drawable/input_box" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+    <Button
+        android:id="@+id/create_button"
+        android:layout_below="@id/create_account_form"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:width="200dp"
+        android:backgroundTint="@color/primary"
+        android:background="@drawable/input_box"
+        android:text="Sign Up"
+        />
+
+
+
+</RelativeLayout>
