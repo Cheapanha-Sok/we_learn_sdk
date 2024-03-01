@@ -66,20 +66,23 @@
                 android:text="Email"
                 android:textColor="@color/primary"
                 android:textSize="20dp" />
+
             <EditText
                 android:id="@+id/phone_box"
-                android:layout_below="@id/phone_fill"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint=""
-                android:textColor="#FF4D8AF0"
-                android:textColorHint="#D9D9D9"
-                android:textSize="20dp"
-                android:padding="10dp"
-                android:layout_marginTop="5dp"
+                android:layout_below="@id/phone_fill"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="0dp"
                 android:width="352dp"
                 android:height="73dp"
-                android:background="@drawable/input_box" />
+                android:background="@drawable/input_box"
+                android:hint=""
+                android:padding="10dp"
+                android:textColor="#FF4D8AF0"
+                android:textColorHint="#D9D9D9"
+                android:textSize="20dp" />
         </RelativeLayout>
 
         <LinearLayout

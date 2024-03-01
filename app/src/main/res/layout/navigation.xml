@@ -15,6 +15,7 @@
             android:layout_height="80dp"
             android:background="@drawable/nav_conner"
             app:itemIconSize="40dp"
+            app:itemTextColor="@color/nav_color"
             app:itemIconTint="@color/nav_color"
             app:itemPaddingBottom="20dp"
             app:itemPaddingTop="10dp"
