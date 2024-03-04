@@ -6,15 +6,15 @@
         android:icon="@drawable/home_icon"/>
     <item
         android:title="Scholarship"
-        android:id="@+id/Scholarship"
+        android:id="@+id/scholarship"
         android:icon="@drawable/scholarship_icon"/>
     <item
         android:title="Test"
-        android:id="@+id/Test"
+        android:id="@+id/test"
         android:icon="@drawable/test_icon"/>
     <item
         android:title="Account"
-        android:id="@+id/Account"
+        android:id="@+id/profile"
         android:icon="@drawable/profile_icon"/>
 
 </menu>
