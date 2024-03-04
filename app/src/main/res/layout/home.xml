@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/welcome"
+        android:layout_width="408dp"
+        android:layout_height="195dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/welcome_home_conner">
+
+        <RelativeLayout
+            android:id="@+id/welcome_notification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/hello_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hello"
+                    android:textSize="25dp"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:id="@+id/morning_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/hello_text"
+                    android:text="good Morning"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"/>
+            </RelativeLayout>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/notification_icon" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/text_1"
+        android:layout_below="@id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:text="List 1"
+        android:textSize="25dp"/>
+
+    <LinearLayout
+        android:id="@+id/list_1"
+        android:layout_below="@id/text_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp">
+
+        <RelativeLayout
+
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:background="@drawable/subject_conner">
+
+            <ImageButton
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:padding="20dp"
+                android:src="@drawable/welcome_image"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_2"
+        android:layout_below="@id/list_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:text="List 2"
+        android:textSize="25dp"/>
+
+    <LinearLayout
+        android:id="@+id/list_2"
+        android:layout_below="@id/text_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp">
+
+        <RelativeLayout
+
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:background="@drawable/subject_conner">
+
+            <ImageButton
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:padding="20dp"
+                android:src="@drawable/welcome_image"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_3"
+        android:layout_below="@id/list_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:text="List 3"
+        android:textSize="25dp"/>
+
+    <LinearLayout
+        android:id="@+id/list_3"
+        android:layout_below="@id/text_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp">
+
+        <RelativeLayout
+
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:background="@drawable/subject_conner">
+
+            <ImageButton
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:padding="20dp"
+                android:src="@drawable/welcome_image"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+
+
+</RelativeLayout>
