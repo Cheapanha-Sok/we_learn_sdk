@@ -1,66 +1,86 @@
 package fragment;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.we_learn.R;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link FragmentScholarship#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.example.we_learn.R;
+import com.example.we_learn.client.ApiClient;
+import com.example.we_learn.client.ApiInterface;
+
+import java.util.ArrayList;
+
+import ApiResponse.ScholarshipResponse;
+import adapter.ScholarshipAdapter;
+import model.ScholarshipModel;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class FragmentScholarship extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    RecyclerView scholarship; // RecyclerView for displaying scholarships
+    ScholarshipAdapter scholarshipAdapter; // Adapter for binding data to RecyclerView
+    ArrayList<ScholarshipModel> scholarshipModels; // List to hold scholarship data
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public FragmentScholarship() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment FragmentScholarship.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static FragmentScholarship newInstance(String param1, String param2) {
-        FragmentScholarship fragment = new FragmentScholarship();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
+    @Nullable
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        // Inflate the fragment layout
+        View rootView = inflater.inflate(R.layout.scholarship, container, false);
+
+        // Initialize the ArrayList to hold scholarship data
+        scholarshipModels = new ArrayList<>();
+
+        // Find the RecyclerView from the inflated layout
+        scholarship = rootView.findViewById(R.id.scholarship);
+
+        // Set layout manager for RecyclerView
+        scholarship.setLayoutManager(new LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false));
+
+        // Create adapter instance and set it to RecyclerView
+        scholarshipAdapter = new ScholarshipAdapter(requireContext(), scholarshipModels);
+        scholarship.setAdapter(scholarshipAdapter);
+
+        // Fetch and populate scholarship data
+        populateScholarships();
+
+        // Return the root view
+        return rootView;
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.scholarship, container, false);
+    // Method to fetch scholarship data from API
+    public void populateScholarships() {
+        // Call the API to get scholarship data asynchronously
+        ApiClient.getClient().create(ApiInterface.class).getScholarship().enqueue(new Callback<ScholarshipResponse>() {
+            @Override
+            public void onResponse(Call<ScholarshipResponse> call, Response<ScholarshipResponse> response) {
+                if (response.isSuccessful()) {
+                    // If the response is successful, parse the data and update the list
+                    ScholarshipResponse scholarshipResponse = response.body();
+                    if (scholarshipResponse != null) {
+                        ArrayList<ScholarshipModel> data = scholarshipResponse.getData();
+                        if (data != null) {
+                            // Add the retrieved data to the list
+                            scholarshipModels.addAll(data);
+                            // Notify the adapter that the data set has changed
+                            scholarshipAdapter.notifyDataSetChanged();
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ScholarshipResponse> call, Throwable t) {
+                // Handle failure in fetching data from API
+            }
+        });
     }
 }

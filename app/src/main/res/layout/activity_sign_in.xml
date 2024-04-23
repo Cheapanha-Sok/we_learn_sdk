@@ -24,6 +24,7 @@
                 android:src="@drawable/welcome_image"/>
         </RelativeLayout>
 
+
         <RelativeLayout
             android:id="@+id/email_form"
             android:layout_below="@id/logo"

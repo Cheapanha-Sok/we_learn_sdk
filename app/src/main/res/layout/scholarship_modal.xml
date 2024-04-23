@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="140dp"
+    android:layout_marginTop="30dp"
+    android:layout_margin="20dp"
+    app:cardCornerRadius="30dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="20dp">
+
+        <RelativeLayout
+            android:layout_width="240dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/scholarship_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Title of scholarship"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/scholarship_description"
+                android:layout_below="@+id/scholarship_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Description"/>
+
+        </RelativeLayout>
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/scholarship_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/welcome_image" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
