@@ -1,10 +1,9 @@
 package model;
 
-public class ScienceModel {
-    private int id;
-    private String name;
+public class YearsModel {
+    String name;
+    int id;
 
-    // Getters and Setters
     public int getId() {
         return id;
     }

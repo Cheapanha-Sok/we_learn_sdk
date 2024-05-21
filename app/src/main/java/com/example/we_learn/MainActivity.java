@@ -1,33 +1,15 @@
 package com.example.we_learn;
+import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-
-import com.example.we_learn.client.ApiClient;
-import com.example.we_learn.client.ApiInterface;
 import com.example.we_learn.databinding.ActivityMainBinding;
-import java.util.ArrayList;
-import ApiResponse.ScienceSubjectResponse;
-import adapter.ScienceAdapter;
 import fragment.FragmentHome;
 import fragment.FragmentProfile;
 import fragment.FragmentScholarship;
 import fragment.FragmentTest;
-import itemDetail.TestPDF;
-import model.ScienceModel;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
-//MainActivity class definition
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding; // Binding for the main activity layout
@@ -36,17 +18,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
-        Button button = findViewById(R.id.testPDF);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), TestPDF.class);
-                intent.putExtra("pdf_url", "https://antilogicalism.com/wp-content/uploads/2018/03/short-history-world.pdf");
-                startActivity(intent);
-            }
-
-        });
-
 
         binding = ActivityMainBinding.inflate(getLayoutInflater()); // Inflate the main activity layout using view binding
         setContentView(binding.getRoot()); // Set the content view to the root view of the inflated layout
@@ -83,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
-// End of MainActivity class
+
 
 
 

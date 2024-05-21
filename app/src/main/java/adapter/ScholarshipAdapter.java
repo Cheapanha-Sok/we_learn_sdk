@@ -1,6 +1,8 @@
 package adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +17,7 @@ import com.example.we_learn.R;
 
 import java.util.ArrayList;
 
+import itemDetail.SubjectDetailPDF;
 import model.ScholarshipModel;
 
 public class ScholarshipAdapter extends RecyclerView.Adapter<ScholarshipAdapter.ViewHolder> {
@@ -34,8 +37,17 @@ public class ScholarshipAdapter extends RecyclerView.Adapter<ScholarshipAdapter.
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.bind(scholarshipModels.get(position));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                context.startActivity(new Intent(context , SubjectDetailPDF.class)
+                        .putExtra("img" , scholarshipModels.get(position).getAvatar())
+                        .putExtra("title" , scholarshipModels.get(position).getLast_name())
+                );
+            }
+        });
     }
 
     @Override

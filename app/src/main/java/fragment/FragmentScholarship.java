@@ -76,7 +76,6 @@ public class FragmentScholarship extends Fragment {
                     }
                 }
             }
-
             @Override
             public void onFailure(Call<ScholarshipResponse> call, Throwable t) {
                 // Handle failure in fetching data from API

@@ -1,11 +1,13 @@
 package ApiResponse;
+
 import java.util.List;
+
 import model.ScienceModel;
 
-public class ScienceSubjectResponse {
+public class SocialSciencesSubjectResponse {
     private int statusCode;
     private String message;
-    private ResponseData data;
+    private ScienceSubjectResponse.ResponseData data;
 
     // Getters and Setters
     public int getStatusCode() {
@@ -24,11 +26,11 @@ public class ScienceSubjectResponse {
         this.message = message;
     }
 
-    public ResponseData getData() {
+    public ScienceSubjectResponse.ResponseData getData() {
         return data;
     }
 
-    public void setData(ResponseData data) {
+    public void setData(ScienceSubjectResponse.ResponseData data) {
         this.data = data;
     }
 

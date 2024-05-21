@@ -1,6 +1,6 @@
 package model;
 
-public class ScienceModel {
+public class SocialSciencesModel {
     private int id;
     private String name;
 
