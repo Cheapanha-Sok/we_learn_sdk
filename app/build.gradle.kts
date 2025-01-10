@@ -52,9 +52,6 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.14.2")
     implementation("de.hdodenhof:circleimageview:3.1.0")
     implementation("com.github.bumptech.glide:glide:4.16.0")
-    implementation ("com.github.barteksc:android-pdf-viewer:3.2.0-beta.1")
-
-    //implementation("com.github.barteksc:android-pdf-viewer:2.8.2") // Commented out as an example
-    //implementation ("com.github.wonday.pdf:PDFViewer:1.7.0")
+    implementation ("com.github.barteksc:AndroidPdfViewer:2.0.2")
 
 }
